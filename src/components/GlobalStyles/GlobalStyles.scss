@@ -11,11 +11,12 @@ html {
 }
 :root {
     --primary: #fe2c55;
+    --text-color: #333;
     --white: #fff;
+    --color-black: #000;
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
-    --color-black: #000;
-    --text-color: #333;
+    --default-layout-horizontal-spacer: 0px 24px 0px 20px;
 }
 input,
 button,

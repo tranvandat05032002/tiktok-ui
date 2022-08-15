@@ -10,6 +10,8 @@
         font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
         font-weight: 400;
         padding: 10px 16px;
+        // height: 42px;
+        line-height: 20px;
         &:hover {
             background: rgba(22, 24, 35, 0.03);
         }
@@ -21,3 +23,24 @@
 }
 
 // menu item
+
+//header
+
+.header {
+    position: relative;
+    height: 50px;
+    margin-top: -8px;
+    .back-btn {
+        width: 50px;
+        height: 100%;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    .header-title {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

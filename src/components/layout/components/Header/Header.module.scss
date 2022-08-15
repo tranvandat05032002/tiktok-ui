@@ -23,6 +23,7 @@ $primary: #fe2c55;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: var(--default-layout-horizontal-spacer);
         .logo {
             display: flex;
             align-items: center;
@@ -120,10 +121,7 @@ $primary: #fe2c55;
                 margin-left: 16px;
                 font-size: 18px;
                 background: transparent;
-            }
-            // menu items
-            .menu-items {
-                width: 223px;
+                cursor: pointer;
             }
         }
     }
