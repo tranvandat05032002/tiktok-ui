@@ -116,11 +116,40 @@ $primary: #fe2c55;
         }
 
         .actions {
+            display: flex;
+            align-items: center;
+            height: 100%;
             .more-btn {
                 padding: 6px 4px;
                 margin-left: 16px;
                 font-size: 18px;
                 background: transparent;
+                cursor: pointer;
+            }
+
+            .action-btn {
+                min-height: 32px;
+                min-width: 32px;
+                background-color: transparent;
+                cursor: pointer;
+                padding: 3px 3px 0px;
+                color: #161823;
+                font-size: 21px;
+            }
+            .action-btn,
+            .user-avatar {
+                margin-left: 16px;
+            }
+
+            .btn-text-upload {
+                margin-right: 8px;
+            }
+
+            .user-avatar {
+                width: 32px;
+                height: 32px;
+                object-fit: cover;
+                border-radius: 50%;
                 cursor: pointer;
             }
         }

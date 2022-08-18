@@ -45,6 +45,33 @@ button {
     border: none;
     outline: none;
 }
+body {
+    .tippy-box {
+        background-color: rgba(84, 84, 84, 0.92);
+        font-size: 1.6rem;
+        border-radius: 8px;
+        line-height: 2.2rem;
+        font-weight: 600;
+        padding: 3px 0px;
+        color: white;
+        text-align: left;
+        // position: relative;
+    }
+    .tippy-arrow {
+        position: absolute;
+        content: '';
+        left: 0px;
+        transform: translate3d(37px, 0px, 0px);
+    }
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+        top: -7.757px;
+        left: 0;
+        border-width: 0 8px 8px;
+        // border-bottom-color: initial;
+        // transform-origin: center bottom;
+        color: rgba(84, 84, 84, 0.92);
+    }
+}
 a[href] {
     color: var(--text-color);
     text-decoration: none;

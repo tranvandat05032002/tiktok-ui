@@ -1,11 +1,12 @@
 $color-primary-button: rgba(254, 44, 85, 1);
 
 .wrapper {
+    min-height: 36px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    padding: 9px 16px;
+    padding: 6px 16px;
     font-weight: 700;
     min-width: 100px;
     border-radius: 4px;
@@ -14,7 +15,7 @@ $color-primary-button: rgba(254, 44, 85, 1);
     user-select: none;
 
     + .wrapper {
-        margin-left: 8px;
+        margin-left: 16px;
     }
 
     &.disabled {
@@ -72,10 +73,17 @@ $color-primary-button: rgba(254, 44, 85, 1);
     }
 }
 .text {
+    height: 36px;
+    min-width: 11px;
     background-color: white;
-
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    border-radius: 2px;
+    padding: 0px 16px;
+    color: #161823;
+    font-weight: 200;
     &:hover {
-        text-decoration: underline;
+        // text-decoration: underline;
+        background-color: rgba(22, 24, 35, 0.03);
     }
 }
 
