@@ -17,7 +17,7 @@ import {
     faSignIn,
     faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
-import { faMessage, faPaperPlane, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 import Button from '~/components/Button';
 
 import { Wrapper as PropperWrapper } from '~/components/Popper';
@@ -26,6 +26,8 @@ import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/menu';
 import { faBitcoin } from '@fortawesome/free-brands-svg-icons';
+import { MessagesIcon, InboxIcon } from '~/components/icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -90,7 +92,7 @@ function Header() {
     const currentUser = true;
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setSearchResult([1]);
+            setSearchResult([]);
         }, 0);
 
         return () => {
@@ -163,12 +165,16 @@ function Header() {
                             </Button>
                             <Tippy content="Messages" placement="bottom" delay={[0, 200]}>
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                    <MessagesIcon width="26px" height="26px" />
                                 </button>
                             </Tippy>
                             <Tippy content="Inbox" placement="bottom" delay={[0, 200]}>
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <InboxIcon className={cx('action-btn_inbox')} width="32px" height="32px" />
+
+                                    <div className={cx('action-btn_count')}>
+                                        <p>13</p>
+                                    </div>
                                 </button>
                             </Tippy>
                         </>
@@ -184,10 +190,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuOnchange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/1966fcda97fb1bc61ca3625ac98a5714~c5_100x100.jpeg?x-expires=1660942800&x-signature=xI79yw%2B8knx5mpkP95gZc9rs8L4%3D"
                                 alt="Tran Van A"
+                                // fallback="https://images.pexels.com/photos/6499190/pexels-photo-6499190.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
