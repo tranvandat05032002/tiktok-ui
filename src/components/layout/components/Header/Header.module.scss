@@ -1,14 +1,4 @@
-//variable
-$search-border-radius: 92px;
-$search-height: 46px;
-$search-top-spacer: 9px;
-$search-button-width: 52px;
-$primary: #fe2c55;
-//mixind
-@mixin input_button {
-    border: none;
-    outline: none;
-}
+@import '../../../GlobalStyles/variableGlobal.scss';
 
 .wrapper {
     height: var(--default-layout-header-height);
@@ -28,92 +18,87 @@ $primary: #fe2c55;
             display: flex;
             align-items: center;
         }
-        .search,
-        .search-result {
-            width: 361px;
+        // .search,
+        // .search-result {
+        //     width: 361px;
 
-            .search-title {
-                height: 30px;
-                padding: 5px 12px;
-                font-size: 14px;
-                line-height: 20px;
-                font-weight: 600;
-                color: rgba(22, 24, 35, 0.5);
-                // font-family: 'IBM Plex Sans', ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
-            }
-        }
-        .search {
-            width: 361px;
-            height: $search-height;
-            background: rgba(22, 24, 35, 0.06);
-            border-radius: $search-border-radius;
-            padding-left: 16px;
-            display: flex;
-            position: relative;
-            border: 1.5px solid transparent;
-            input {
-                color: var(--color-black);
-                font-size: 16px;
-                flex: 1;
-                font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
-                @include input_button();
-                background-color: transparent;
-                line-height: 22px;
-                height: 100%;
-                font-weight: 100;
-                caret-color: $primary;
+        //     .search-title {
+        //         height: 30px;
+        //         padding: 5px 12px;
+        //         font-size: 14px;
+        //         line-height: 20px;
+        //         font-weight: 600;
+        //         color: rgba(22, 24, 35, 0.5);
+        //     }
+        // }
+        // .search {
+        //     width: 361px;
+        //     height: $search-height;
+        //     background: rgba(22, 24, 35, 0.06);
+        //     border-radius: $search-border-radius;
+        //     padding-left: 16px;
+        //     display: flex;
+        //     position: relative;
+        //     border: 1.5px solid transparent;
+        //     input {
+        //         color: var(--color-black);
+        //         font-size: 16px;
+        //         flex: 1;
+        //         @include input_button();
+        //         background-color: transparent;
+        //         line-height: 22px;
+        //         height: 100%;
+        //         font-weight: 100;
+        //         caret-color: $primary;
 
-                &:not(:placeholder-shown) ~ .search-btn {
-                    color: rgba(22, 24, 35, 0.75);
-                }
-            }
-            ::placeholder {
-                font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
-                // font-weight: 100;
-            }
-            &::after {
-                position: absolute;
-                content: '';
-                top: $search-top-spacer;
-                right: $search-button-width;
-                height: calc($search-height - $search-top-spacer * 2);
-                width: 1px;
-                background: rgba(22, 24, 35, 0.12);
-            }
-            &:focus-within {
-                border-color: rgba(22, 24, 35, 0.2);
-            }
-            .search-btn {
-                width: $search-button-width;
-                height: 100%;
-                @include input_button();
-                padding: 11px 16px 11px 12px;
-                border-top-right-radius: $search-border-radius;
-                border-bottom-right-radius: $search-border-radius;
-                font-size: 1.9rem;
-                cursor: pointer;
-                color: rgba(22, 24, 35, 0.34);
-                &:hover {
-                    background: rgba(22, 24, 35, 0.03);
-                }
+        //         &:not(:placeholder-shown) ~ .search-btn {
+        //             color: rgba(22, 24, 35, 0.75);
+        //         }
+        //     }
 
-                &:active {
-                    background: rgba(22, 24, 35, 0.06);
-                }
-            }
-            .clear,
-            .loading {
-                position: absolute;
-                content: '';
-                right: calc($search-button-width);
-                top: 50%;
-                transform: translateY(-50%);
-                color: rgba(22, 24, 35, 0.34);
-                width: 40px;
-                height: 16px;
-                @include input_button();
-            }
-        }
+        //     &::after {
+        //         position: absolute;
+        //         content: '';
+        //         top: $search-top-spacer;
+        //         right: $search-button-width;
+        //         height: calc($search-height - $search-top-spacer * 2);
+        //         width: 1px;
+        //         background: rgba(22, 24, 35, 0.12);
+        //     }
+        //     &:focus-within {
+        //         border-color: rgba(22, 24, 35, 0.2);
+        //     }
+        //     .search-btn {
+        //         width: $search-button-width;
+        //         height: 100%;
+        //         @include input_button();
+        //         padding: 11px 16px 11px 12px;
+        //         border-top-right-radius: $search-border-radius;
+        //         border-bottom-right-radius: $search-border-radius;
+        //         font-size: 1.9rem;
+        //         cursor: pointer;
+        //         color: rgba(22, 24, 35, 0.34);
+        //         &:hover {
+        //             background: rgba(22, 24, 35, 0.03);
+        //         }
+
+        //         &:active {
+        //             background: rgba(22, 24, 35, 0.06);
+        //         }
+        //     }
+        //     .clear,
+        //     .loading {
+        //         position: absolute;
+        //         content: '';
+        //         right: calc($search-button-width);
+        //         top: 50%;
+        //         transform: translateY(-50%);
+        //         color: rgba(22, 24, 35, 0.34);
+        //         width: 40px;
+        //         height: 16px;
+        //         @include input_button();
+        //     }
+        // }
 
         .actions {
             display: flex;

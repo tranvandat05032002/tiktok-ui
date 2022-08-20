@@ -1,33 +1,27 @@
-import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import {
     faArrowRightFromBracket,
     faCircleQuestion,
-    faCircleXmark,
     faEarthAsia,
     faEllipsisVertical,
     faGears,
     faKeyboard,
-    faMagnifyingGlass,
     faPlus,
     faSignIn,
-    faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import Button from '~/components/Button';
 
-import { Wrapper as PropperWrapper } from '~/components/Popper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
-import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/menu';
 import { faBitcoin } from '@fortawesome/free-brands-svg-icons';
 import { MessagesIcon, InboxIcon } from '~/components/icons';
 import Image from '~/components/Image';
+import Search from '../Search';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -88,17 +82,7 @@ const userMenu = [
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
     const currentUser = true;
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setSearchResult([]);
-        }, 0);
-
-        return () => {
-            clearTimeout(timeout);
-        };
-    }, []);
     //handle logic
     const handleMenuOnchange = (menuItem) => {
         switch (menuItem.title) {
@@ -117,46 +101,10 @@ function Header() {
                     <img src={images.logo} alt="Tiktok" />
                 </div>
 
-                <HeadlessTippy
-                    interactive
-                    visible={searchResult.length > 0}
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <PropperWrapper>
-                                <h4 className={cx('search-title')}>Tài khoản</h4>
+                {/* search */}
+                <Search />
 
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                            </PropperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input
-                            type="text"
-                            placeholder="Search accounts and videos"
-                            spellCheck={false}
-                            id={cx('input')}
-                        />
-
-                        <button className={cx('clear')}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
-
-                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-
-                        <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                            {/* <img src={images.search} alt="Search" /> */}
-                        </button>
-                    </div>
-                </HeadlessTippy>
-
+                {/* action */}
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
