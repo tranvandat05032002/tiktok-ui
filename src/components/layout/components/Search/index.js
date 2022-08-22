@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import classNames from 'classnames/bind';
@@ -17,20 +17,29 @@ function Search() {
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     //useRef
     const inputRef = useRef();
+    console.log(searchValue);
 
     //useEffect
     useEffect(() => {
-        const timeout = setTimeout(() => {
-            setSearchResult([1, 1]);
-        }, 0);
-
-        return () => {
-            clearTimeout(timeout);
-        };
-    }, []);
+        if (!searchValue.trim()) {
+            setSearchResult([]);
+            return;
+        }
+        setLoading(true);
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+            .then((res) => res.json())
+            .then((res) => {
+                setSearchResult(res.data);
+                setLoading(false);
+            })
+            .catch(() => {
+                setLoading(false);
+            });
+    }, [searchValue]);
 
     //handle
     //handleClick
@@ -41,6 +50,13 @@ function Search() {
     const handleHideResult = () => {
         setShowResult(false);
     };
+    const handleSpace = (e) => {
+        if (e.target.value.startsWith(' ')) {
+            return;
+        } else {
+            setSearchValue(e.target.value);
+        }
+    };
     return (
         <HeadlessTippy
             interactive
@@ -49,14 +65,9 @@ function Search() {
                 <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                     <PropperWrapper>
                         <h4 className={cx('search-title')}>Tài khoản</h4>
-
-                        <AccountItem />
-                        <AccountItem />
-                        <AccountItem />
-                        <AccountItem />
-                        <AccountItem />
-                        <AccountItem />
-                        <AccountItem />
+                        {searchResult.map((result) => (
+                            <AccountItem key={result.id} data={result} />
+                        ))}
                     </PropperWrapper>
                 </div>
             )}
@@ -70,17 +81,18 @@ function Search() {
                     placeholder="Search accounts and videos"
                     spellCheck={false}
                     id={cx('input')}
-                    onChange={(e) => setSearchValue(e.target.value)}
+                    // onChange={(e) => setSearchValue(e.target.value)}
+                    onChange={handleSpace}
                     onFocus={() => setShowResult(true)}
                 />
 
-                {!!searchValue && (
+                {!!searchValue && !loading && (
                     <button className={cx('clear')}>
                         <FontAwesomeIcon icon={faCircleXmark} onClick={handleClick} />
                     </button>
                 )}
 
-                {/* <FontAwesomeIcon className={cx('loading')} icon={faSpinner} /> */}
+                {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
 
                 <button className={cx('search-btn')}>
                     <SearchIcon />

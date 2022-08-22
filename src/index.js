@@ -8,11 +8,11 @@ import GlobalStyles from '~/components/GlobalStyles';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.Fragment>
-        <GlobalStyles>
-            <App />
-        </GlobalStyles>
-    </React.Fragment>,
+    // <React.Fragment>
+    <GlobalStyles>
+        <App />
+    </GlobalStyles>,
+    // </React.Fragment>,
 );
 
 // If you want to start measuring performance in your app, pass a function
