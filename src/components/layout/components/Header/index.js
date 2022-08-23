@@ -14,6 +14,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import Button from '~/components/Button';
+import { Link } from 'react-router-dom';
 
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -22,6 +23,7 @@ import { faBitcoin } from '@fortawesome/free-brands-svg-icons';
 import { MessagesIcon, InboxIcon } from '~/components/icons';
 import Image from '~/components/Image';
 import Search from '../Search';
+import routeConfig from '~/config/routes';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -97,9 +99,11 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
-                    <img src={images.logo} alt="Tiktok" />
-                </div>
+                <Link to={routeConfig.home} className={cx('logo-link')}>
+                    <div className={cx('logo')}>
+                        <img src={images.logo} alt="Tiktok" />
+                    </div>
+                </Link>
 
                 {/* search */}
                 <Search />

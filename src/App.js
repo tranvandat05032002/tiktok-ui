@@ -4,19 +4,6 @@ import { Fragment } from 'react';
 import { publicRoutes } from '~/routes';
 import { DefaultLayout } from '~/components/layout';
 function App() {
-    // useEffect(() => {
-    //     const btnElement = document.querySelector('.Header_search-btn__sX7B-');
-    //     const inputElement = document.getElementById('input');
-    //     const inputParentElement = document.querySelector('.Header_search__TlIMR');
-    //     console.log(inputElement);
-    //     btnElement.addEventListener('click', () => {
-    //         inputParentElement.style.border = 'none';
-    //     });
-
-    //     inputElement.addEventListener('keydown', () => {
-    //         inputParentElement.style.border = '1.5px solid rgba(22, 24, 35, 0.2)';
-    //     });
-    // }, []);
     return (
         <Router>
             <div className="App">
