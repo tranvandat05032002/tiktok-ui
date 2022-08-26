@@ -9,8 +9,9 @@ import * as searchService from '~/services/searchService';
 import styles from './Search.module.scss';
 import { Wrapper as PropperWrapper } from '~/components/Popper';
 import { SearchIcon } from '~/components/icons';
-import AccountItem from '~/components/AccountItem';
+// import AccountItem from '~/components/AccountItem';
 import { useDebounce } from '~/hooks';
+import RenderList from './RenderList';
 
 const cx = classNames.bind(styles);
 
@@ -19,17 +20,17 @@ function Search() {
     //useState
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
-    const [showResult, setShowResult] = useState(true);
+    const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false);
     // debounce
-    // const debounced = useRef(null);
-    const debounced = useDebounce(searchValue, 500);
+    // const debouncedValue = useRef(null);
+    const debouncedValue = useDebounce(searchValue, 500);
     //useRef
     const inputRef = useRef();
     //useEffect
 
     useEffect(() => {
-        if (!debounced.trim()) {
+        if (!debouncedValue.trim()) {
             setSearchResult([]);
             return;
         }
@@ -37,13 +38,13 @@ function Search() {
         //axios/service
         const fetchApi = async () => {
             setLoading(true);
-            const result = await searchService.search(debounced);
+            const result = await searchService.search(debouncedValue);
             setSearchResult(result);
 
             setLoading(false);
         };
         fetchApi();
-    }, [debounced]);
+    }, [debouncedValue]);
 
     // const
 
@@ -74,9 +75,7 @@ function Search() {
                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                         <PropperWrapper>
                             <h4 className={cx('search-title')}>Tài khoản</h4>
-                            {searchResult.map((result) => (
-                                <AccountItem key={result.id} data={result} />
-                            ))}
+                            <RenderList searchResult={searchResult} />
                         </PropperWrapper>
                     </div>
                 )}
