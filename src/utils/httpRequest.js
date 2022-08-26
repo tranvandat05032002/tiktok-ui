@@ -1,9 +1,10 @@
 import axios from 'axios';
 
-console.log(process.env.REACT_APP_BASE_URL);
+// console.log(process.env.REACT_APP_BASE_URL);
 
 const httpRequest = axios.create({
-    baseURL: 'https://tiktok.fullstack.edu.vn/api/',
+    // baseURL: 'https://tiktok.fullstack.edu.vn/api/',
+    baseURL: process.env.REACT_APP_BASE_URL,
 });
 export const get = async (path, option = {}) => {
     const response = await httpRequest.get(path, option);
