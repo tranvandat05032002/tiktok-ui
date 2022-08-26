@@ -50,7 +50,7 @@ $color-primary-button: rgba(254, 44, 85, 1);
 
 .primary {
     background-color: $color-primary-button;
-    color: var(--white);
+    color: var(--white) !important;
     border-top: $color-primary-button;
     &:hover {
         border-top: $color-primary-button;
