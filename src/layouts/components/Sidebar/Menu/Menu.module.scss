@@ -12,6 +12,7 @@ $color-side: #161823;
     border-radius: 4px;
     color: $color-side;
     font-weight: 700;
+    cursor: pointer;
     transition: background-color ease-in-out 200ms;
 
     &.active {
