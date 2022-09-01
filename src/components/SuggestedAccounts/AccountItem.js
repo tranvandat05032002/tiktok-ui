@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './SuggestedAccounts.module.scss';
 import PropTypes from 'prop-types';
@@ -10,19 +9,6 @@ import { Wrapper as PropperWrapper } from '~/components/Popper';
 import AccountPreview from './AccountPreview';
 
 const cx = classNames.bind(styles);
-
-// const renderPreview = ({ props, suggested }) => {
-//     console.log(suggested);
-//     return (
-//         <div tabIndex="-1" {...props}>
-//             <PropperWrapper>
-//                 <div className={cx('preview')}>
-//                     <AccountPreview />
-//                 </div>
-//             </PropperWrapper>
-//         </div>
-//     );
-// };
 
 function AccountItem({ suggested }) {
     return (
