@@ -3,19 +3,29 @@ import PropTypes from 'prop-types';
 import Button from '~/components/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './AccountPreview.module.scss';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faUserAlt, faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
 function AccountPreview({ suggestedTippy }) {
-    console.log(suggestedTippy);
+    const [button, setButton] = useState(true);
+    const handleChangeButton = () => {
+        setButton(!button);
+    };
     return (
         <div className={cx('wrapper')}>
             <div className={cx('header')}>
                 <img className={cx('avatar')} src={suggestedTippy.avatar} alt="" />
-                <Button className={cx('follow-btn')} primary>
-                    Follow
-                </Button>
+                {button ? (
+                    <Button onClick={handleChangeButton} className={cx('follow-btn')} primary>
+                        Follow
+                    </Button>
+                ) : (
+                    <Button onClick={handleChangeButton} className={cx('follow-btn')} text>
+                        Following
+                    </Button>
+                )}
             </div>
 
             <div className={cx('body')}>
