@@ -1,0 +1,223 @@
+@mixin iconSize() {
+    width: 48px;
+    max-width: 48px;
+    height: 48px;
+    max-height: 48px;
+    transition: all ease-in-out 200ms;
+    background-color: rgba(22, 24, 35, 0.06);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 2.2rem;
+    margin: 8px 0px 6px 0px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.1);
+    }
+}
+@mixin boxModal {
+    position: absolute;
+    content: '';
+    color: white;
+}
+@mixin command {
+    @include boxModal();
+    bottom: 26px;
+    left: 12px;
+    // color: white;
+    // background-color: transparent;
+    // padding: 10px;
+    // width: 40px;
+    // height: 40px;
+    // font-size: 17px;
+}
+.wrapper {
+    width: 692px;
+    max-width: 692px;
+    margin: 0px 16px;
+    padding: 24px 0px;
+    border-bottom: 1px solid #e7e8e9;
+    .profile {
+        display: flex;
+        padding: 20px 0px;
+        position: relative;
+        .avatar {
+            width: 56px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .item-info {
+            margin-left: 12px;
+            display: flex;
+            flex-direction: column;
+            .info {
+                display: flex;
+                .info-user {
+                    width: 510px;
+                    max-width: 510px;
+                    .user {
+                        display: flex;
+                        align-items: center;
+                        h3 {
+                            font-family: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+                            font-weight: 400;
+                            line-height: 25px;
+                            font-size: 1.8rem;
+                            margin-right: 4px;
+                            cursor: pointer;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                        .icon {
+                            // margin-bottom: 8px;
+                            margin-right: 4px;
+                            color: #20d5ec;
+                        }
+                        span {
+                            margin-bottom: -5px;
+                            font-size: 14px;
+                            line-height: 28px;
+                            font-weight: 400;
+                        }
+                    }
+                    .content {
+                        font-size: 16px;
+                        line-height: 22px;
+                        color: #161823;
+                        font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+                        font-weight: 400;
+                    }
+                    .video-source {
+                        margin: 4px 0px 12px 0px;
+                        font-weight: 600;
+                        .icon {
+                            font-size: 13px;
+                            margin-right: 5px;
+                            font-weight: 300;
+                        }
+                    }
+                }
+                .btn-follow {
+                    position: absolute;
+                    content: '';
+                    height: 28px;
+                    min-height: 28px;
+                    width: 88px;
+                    right: 0%;
+                    top: 28px;
+                    padding: 0px 10px;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+            }
+        }
+        .video-uploaded {
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+            height: 100%;
+            .feed-video {
+                width: 276.883px;
+                max-width: 276.883px;
+                height: 494.438px;
+                max-height: 494.483px;
+                margin-right: 20px;
+                position: relative;
+                .placement {
+                    opacity: 0;
+                    .logo {
+                        @include boxModal();
+                        right: 16px;
+                        top: 24px;
+                        font-size: 1.6rem;
+                        font-weight: 400;
+                        .icon {
+                            margin-right: 4px;
+                            font-size: 11px;
+                        }
+                    }
+                    .controls {
+                        .prev {
+                            @include command();
+                            // border: 1px solid red;
+                            .btn-play {
+                                // @include command();
+                                color: white;
+                                background-color: transparent;
+                                padding: 10px;
+                                width: 40px;
+                                height: 40px;
+                                font-size: 17px;
+                            }
+                            .btn-pause {
+                                // @include command();
+                                // display: none;
+                                color: white;
+                                background-color: transparent;
+                                padding: 10px;
+                                width: 40px;
+                                height: 40px;
+                                font-size: 17px;
+                            }
+                        }
+                        .btn-volume {
+                            position: absolute;
+                            content: '';
+                            bottom: 26px;
+                            right: 12px;
+                            background-color: transparent;
+                            color: white;
+                            font-size: 1.7rem;
+                            padding: 10px;
+                        }
+                    }
+                }
+                video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    cursor: pointer;
+                    border-radius: 7px;
+                }
+
+                &:hover .placement {
+                    animation: opacity 0.3s;
+                    opacity: 1;
+                }
+            }
+            .icons {
+                .interactive {
+                    text-align: center;
+                    .icon-tym {
+                        @include iconSize();
+                    }
+                    .icon-comment {
+                        @include iconSize();
+                    }
+                    .icon-share {
+                        @include iconSize();
+                    }
+
+                    p {
+                        font-size: 12px;
+                        color: #161823bf;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

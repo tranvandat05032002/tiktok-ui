@@ -14,6 +14,7 @@
         width: 44px;
         object-fit: cover;
         border-radius: 50%;
+        cursor: pointer;
     }
     .follow-btn {
         min-width: 106px;
@@ -28,6 +29,7 @@
     .body {
         .nickname {
             width: max-content;
+            cursor: pointer;
             strong {
                 font-size: 1.8rem;
                 color: #161823;
@@ -42,6 +44,7 @@
             font-size: 14px;
             font-weight: 600;
             line-height: 20px;
+            cursor: pointer;
         }
         .analytics {
             margin-top: 8px;

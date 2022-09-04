@@ -20,7 +20,7 @@ function SuggestedAccounts({ label }) {
         } else {
             setCheckTippy(false);
         }
-    }, []);
+    }, [label]);
     useEffect(() => {
         async function fetAPI() {
             const requestUrl = 'http://localhost:3000/following';

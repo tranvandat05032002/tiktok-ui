@@ -146,7 +146,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/1966fcda97fb1bc61ca3625ac98a5714~c5_100x100.jpeg?x-expires=1660942800&x-signature=xI79yw%2B8knx5mpkP95gZc9rs8L4%3D"
+                                src="https://icdn.dantri.com.vn/thumb_w/640/2021/03/27/thuytrang-2738-1616857930100.jpg"
                                 alt="Tran Van A"
                                 // fallback="https://images.pexels.com/photos/6499190/pexels-photo-6499190.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                             />

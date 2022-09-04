@@ -1,0 +1,17 @@
+.wrapper {
+    .btn-getApp {
+        position: absolute;
+        content: '';
+        position: fixed;
+        width: 90px;
+        min-width: 90px;
+        font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+        right: 24px;
+        bottom: 12px;
+        font-size: 14px;
+        font-weight: 700;
+        color: #161823bf;
+        z-index: 7;
+        padding: 0px 8px;
+    }
+}
