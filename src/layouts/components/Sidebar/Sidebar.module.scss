@@ -1,17 +1,18 @@
 .wrapper {
     width: 356px;
+    position: fixed;
     // height: 550px;
     // min-height: 550px;
     padding: 20px 0px 26px 8px;
-    overflow-y: overlay;
-    overflow-y: auto;
+    // overflow-y: overlay;
+    // overflow-y: auto;
     transition: 10s ease-in-out;
 }
 
-.wrapper:hover {
-    height: 1000px;
-    min-height: 550px;
-}
+// .wrapper:hover {
+//     height: 1000px;
+//     min-height: 550px;
+// }
 .sidebar-icon {
     margin-top: 10px;
 }

@@ -110,7 +110,7 @@ function PostHome() {
                             <ReactPlayer
                                 width="100%"
                                 height="100%"
-                                url="https://v16-webapp.tiktok.com/20ffd4133de3bbccef8e56fe7cff8989/6314415b/video/tos/useast2a/tos-useast2a-pve-0037-aiso/6fbf4a73e9784d8088a6956ccdd856ef/?a=1988&ch=0&cr=0&dr=0&lr=tiktok&cd=0%7C0%7C1%7C0&cv=1&br=2208&bt=1104&cs=0&ds=3&ft=eXd.6Hk_Myq8ZQpc.he2N1MTrl7Gb&mime_type=video_mp4&qs=0&rc=ZmgzaThmMzVpNDU0ZDU1NUBpM2s0eTM6Zjc1ZTMzZjgzM0BjNDMzLTUzNjExLi4tLzBjYSNlL25ocjRfZS1gLS1kL2Nzcw%3D%3D&l=202209040010200102450451762295A29D&btag=80000"
+                                url="https://v16-webapp.tiktok.com/467e2f65b506262ee27a3349628dfa03/6314c6fc/video/tos/useast2a/tos-useast2a-pve-0037-aiso/375b1732dc384299a539d21b51576202/?a=1988&ch=0&cr=0&dr=0&lr=tiktok&cd=0%7C0%7C1%7C0&cv=1&br=3500&bt=1750&cs=0&ds=3&ft=eXd.6Hk_Myq8ZrfL~he2NHyQml7Gb&mime_type=video_mp4&qs=0&rc=OTU3ODg4NDVpM2c4MzpnaEBpMzl5cmg6Zjg7ZTMzZjgzM0AzL2FjYTBeNmExMDMzYTUxYSNqY15mcjRnbGNgLS1kL2Nzcw%3D%3D&l=2022090409402701024513011327C66597&btag=80000"
                             />
                         </div>
                         <div className={cx('icons')}>
